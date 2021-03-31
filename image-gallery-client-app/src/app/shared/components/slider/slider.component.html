@@ -1,0 +1,20 @@
+<div class="image-slider-container">
+    <div class="image-slider-columns">
+        <div class="image-slide" (click) ="onClickLeft()">
+            <img src="/assets/img/left.svg" style="width:150px;height:100px">
+        </div>
+        <div #gallery class="image-slider-gallery">
+            <div class="image-slide galleryItemClass" *ngFor="let model of photosModel"
+            (click)="handleSlideSelected(model)"
+            >
+                <img [src]="model.download_url" 
+                    [alt]="model.author" 
+                    [title]="model.author" 
+                    style="width:150px;height:100px">
+            </div>
+        </div>
+        <div class="image-slide" (click) ="onClickRight()">
+            <img src="/assets/img/right.svg" style="width:150px;height:100px">
+        </div>
+    </div>
+</div>

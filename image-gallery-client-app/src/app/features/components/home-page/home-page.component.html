@@ -1,0 +1,9 @@
+<div class="main"  *ngIf="photosModel.length > 0">
+    <div class="main-image-container">
+        <img class="main-image"  loading="lazy" alt="...loading" [src]="selectedPhoto.friendly_image_url">
+    </div>
+    <div class="image-author-container">
+        {{selectedPhoto.author}}
+    </div>
+    <app-slider [photosModel] = "photosModel" (onSlideSelected)="selectPhoto($event)"></app-slider>
+</div>
